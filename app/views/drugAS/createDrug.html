@@ -1,0 +1,42 @@
+<div class="x_panel">
+<h2 ng-show="drug._id!=null">Edit</h2>
+<h2 ng-hide="drug._id!=null">Create</h2>
+<hr>
+<form name="drugForm" ng-submit="saveData(drug)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Drug Name</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="drug.drugName" name="drugName" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.drugName.$error.required && (drugForm.$submitted || drugForm.drugName.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Unit Type</label>
+        <div class="col-md-5">
+            <textarea name="UnitType" ng-model="drug.UnitType" ng-required="true" class="form-control"></textarea>
+            <p ng-show="drugForm.UnitType.$error.required && (drugForm.$submitted || drugForm.UnitType.$dirty)" class="text-danger">Please Enter Unit Type</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Drug Category</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="drug.DrugC" name="DrugC" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.DrugC.$error.required && (drugForm.$submitted || drugForm.DrugC.$dirty)" class="text-danger">Please Enter Drug Category</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Drug Quantity</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="drug.DrugQ" name="DrugQ" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.DrugQ.$error.required && (drugForm.$submitted || drugForm.DrugQ.$dirty)" class="text-danger">Please Enter Drug Quantity</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="drug._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="drug._id!=null"/>
+            <a ui-sref="drugs" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script src="../../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="../../app.js"></script>
+    <script src="../../services/service.js"></script>
+    <script src="../../controllers/user.controller.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- Custom Theme Style -->
+    <link href="../../build/css/custom.min.css" rel="stylesheet">
+
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"> <span>Pharmacy Management System</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile">
+                    <div class="profile_pic">
+                        <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>Vimukthi Mudalige</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+                    <div class="menu_section">
+                        <li></li>
+                        <h3>General</h3>
+                        <li></li>
+                        <ul class="nav side-menu">
+                            <li><a href="index.html"><i class="fa fa-home"></i> Home </a>
+
+                            </li>
+                            <li><a><i class="fa fa-edit"></i> Inventory <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+
+                                    <li><a href="">Drug Management</a></li>
+                                    <li><a href="">Order Management</a></li>
+                                    <li><a href="">Generate Reports</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-desktop"></i>Prescription Management <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-table"></i>Patient Management <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <!--<li><a href="">...</a></li>-->
+                                      <li><a href="index_manage.html">Manage Patients</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- /sidebar menu -->
+
+                <!-- /menu footer buttons -->
+                <div class="sidebar-footer hidden-small">
+                    <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Logout">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- /menu footer buttons -->
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav class="" role="navigation">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="../../images/img.jpg" alt="">Vimukthi Mudalige
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;"> Profile</a></li>
+
+                                <li><a href="javascript:;">Help</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <!-- /main content page pharmacy -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Add New Pharmacist <small>user creation</small></h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+
+                                </li>
+                                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            <form class="form-horizontal form-label-left" novalidate>
+
+                                <span class="section">Personal Info</span>
+
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Enter Full Name" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Mobile Number <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="number" id="number" name="number" required="required"  class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+
+                                <div class="item form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">User Type <span class="required">*</span>
+                                    </label>
+                                    <!--
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
+                                    </div>
+
+
+
+                                    <li role="presentation" class="dropdown">
+                                        <a id="user_type" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                            Select User Type
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul id="menu6" class="dropdown-menu animated fadeInDown" role="menu">
+
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" id="pharmacist" href="#">Pharmacist</a>
+                                            </li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" id="chief_pharmacist" href="#">Chief Pharmacist</a>
+                                            </li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" id="doctor" href="#">Doctor</a>
+                                            </li>
+
+
+                                        </ul>
+                                    </li>
+                                    -->
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select class="form-control>
+                                        <option value="pharmacist">Pharmacist</option>
+                                        <option value="chief_pharmacist">Chief Pharmacist</option>
+                                        <option value="doctor">Doctor</option>
+
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label for="password" class="control-label col-md-3">Password</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+                                    </div>
+                                </div>
+                                <div class="item form-group">
+                                    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-3">
+                                        <button type="submit" class="btn btn-primary">Cancel</button>
+                                        <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+<!-- end of main -->
+            <div class="container">
+                <ui-view></ui-view>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+
+
+    </div>
+    <!-- /page content -->
+
+    <!-- footer content -->
+    <footer>
+
+        <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="../../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="../../vendors/nprogress/nprogress.js"></script>
+
+<!-- bootstrap-progressbar -->
+<script src="../../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+<!-- bootstrap-daterangepicker -->
+<script src="../../js/moment/moment.min.js"></script>
+<script src="../../js/datepicker/daterangepicker.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="../../build/js/custom.min.js"></script>
+
+<!-- newly added -->
+
+<!-- Datatables -->
+<script src="../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="../../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="../../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="../../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="../../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="../../vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+<script src="../../vendors/jszip/dist/jszip.min.js"></script>
+<script src="../../vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="../../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        var handleDataTableButtons = function() {
+            if ($("#datatable-buttons").length) {
+                $("#datatable-buttons").DataTable({
+                    dom: "Bfrtip",
+                    buttons: [
+                        {
+                            extend: "copy",
+                            className: "btn-sm"
+                        },
+                        {
+                            extend: "csv",
+                            className: "btn-sm"
+                        },
+                        {
+                            extend: "excel",
+                            className: "btn-sm"
+                        },
+                        {
+                            extend: "pdfHtml5",
+                            className: "btn-sm"
+                        },
+                        {
+                            extend: "print",
+                            className: "btn-sm"
+                        },
+                    ],
+                    responsive: true
+                });
+            }
+        };
+
+        TableManageButtons = function() {
+            "use strict";
+            return {
+                init: function() {
+                    handleDataTableButtons();
+                }
+            };
+        }();
+
+        $('#datatable').dataTable();
+        $('#datatable-keytable').DataTable({
+            keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+
+        $('#datatable-scroller').DataTable({
+            ajax: "js/datatables/json/scroller-demo.json",
+            deferRender: true,
+            scrollY: 380,
+            scrollCollapse: true,
+            scroller: true
+        });
+
+        var table = $('#datatable-fixed-header').DataTable({
+            fixedHeader: true
+        });
+
+        TableManageButtons.init();
+    });
+</script>
+
+</body>
+</html>

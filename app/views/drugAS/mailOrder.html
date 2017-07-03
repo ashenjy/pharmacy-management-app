@@ -1,0 +1,61 @@
+<hr>
+<h2 ng-hide="email._id!=null"> </h2>
+<h2 ng-show="email._id!=null">Drug Request Mail Sender</h2>
+<hr>
+<form name="emailForm" ng-submit="saveData(email)" novalidate class="form-horizontal">
+
+    <div class="form-group">
+        <label class="col-md-1">From :</label>
+        <div class="col-md-10">
+            <input type="text"   ng-model="email.emailFrom='pharmacy111@gmail.com'" name="emailFrom" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">To :</label>
+        <div class="col-md-10">
+            <input type="text"   ng-model="email.emailTo='supplier1991@gmail.com'"   name="emailTo" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">Subject :</label>
+        <div class="col-md-10">
+            <input type="text"  value = "Drug Reorder Request for {{ drug.drugName }} "  name="emailSubject" ng-required="true" class="form-control">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">Content</label>
+        <div class="col-md-10">
+            <textarea name="emailContent" ng-required="true" class="form-control" rows="15" cols="70">
+Dear Officer,
+
+The Quantities of the below Drugs are Low.
+
+Drug Name : {{ drug.drugName }}
+Category  :{{ drug.DrugC }}
+Unit Type : {{ drug.UnitType }}
+Quantity in Hand :{{ drug.DrugQ }}
+
+Please be kind enough to send us new stocks
+
+Best Regards,
+Chief Pharmasist
+
+            </textarea>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Send" class="btn btn-primary" />
+
+            <a ui-sref="emails" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,56 @@
+<-- add.html -->
+<h2 ng-show="drug._id!=null">Edit</h2>
+<h2 ng-hide="drug._id!=null">Create</h2>
+<hr>
+<form name="drugForm" ng-submit="saveData(drug)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Drug Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="drug.name" name="name" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.name.$error.required && (drugForm.$submitted || drugForm.name.$dirty)" class="text-danger">Enter Drug Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Category</label>
+        <div class="col-md-10">
+            <input name="category" ng-model="drug.category" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.category.$error.required && (drugForm.$submitted || drugForm.category.$dirty)" class="text-danger">Select Category</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Reorder Level</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="drug.reorderLevel" name="reorderLevel" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.reorderLevel.$error.required && (drugForm.$submitted || drugForm.reorderLevel.$dirty)" class="text-danger">Enter Drug Reorder Level</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Danger Level</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="drug.dangerLevel" name="dangerLevel" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.dangerLevel.$error.required && (drugForm.$submitted || drugForm.dangerLevel.$dirty)" class="text-danger">Enter Drug Danger Level</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2">Price</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="drug.price" name="price" ng-required="true" class="form-control"/>
+            <p ng-show="drugForm.price.$error.required && (drugForm.$submitted || drugForm.price.$dirty)" class="text-danger">Enter Drug Price</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Remarks</label>
+        <div class="col-md-10">
+            <textarea name="remarks" ng-model="drug.remarks" ng-required="false" class="form-control"></textarea>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Add" class="btn btn-primary" ng-show="drug._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="drug._id!=null"/>
+            <a ui-sref="drugs" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

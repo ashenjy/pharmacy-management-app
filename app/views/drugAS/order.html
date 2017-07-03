@@ -1,0 +1,68 @@
+<hr>
+
+<div class="col-md-12 col-sm-10 col-xs-10">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Order / Mail History </h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <p><input type="text" ng-model="test" placeholder="Search History ..." class="form-control"></p>
+                    </div>
+                </div>
+            </form>
+            <table class="table table-hover" ng-if="emails.length>0">
+                <thead>
+                <tr>
+                <tr>
+
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Subject</th>
+                    <th>Content</th>
+
+
+                </tr>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="email in emails | filter:test">
+                    <td> {{ email.emailFrom }}</td>
+                    <td> {{ email.emailTo }}</td>
+                    <td> {{ email.emailSubject}} </td>
+                    <td>{{ email.emailContent }}</td>
+                    <td> <a ui-sref="sendMail"><button class="btn btn-primary">Re-Order</button></a></td>
+                    <td>
+                        <a ui-sref="editMail({id:email._id})">Edit</a></td>
+                    <td><a href="#" ng-click="deletemail(email._id)">Delete</a></td>
+
+
+                </tr>
+                </tbody>
+            </table>
+            <div ng-if="emails.length==0">
+                No record found !!
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<-- Create.html -->
+<h2 ng-show="user._id!=null">Edit</h2>
+<h2 ng-hide="user._id!=null">Create</h2>
+<hr>
+<form name="userForm" ng-submit="saveData(user)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Name</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.name" name="name" ng-required="true" class="form-control"/>
+            <p ng-show="userForm.name.$error.required && (userForm.$submitted || userForm.name.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Address</label>
+        <div class="col-md-10">
+            <textarea name="address" ng-model="user.address" ng-required="true" class="form-control"></textarea>
+            <p ng-show="userForm.address.$error.required && (userForm.$submitted || userForm.address.$dirty)" class="text-danger">Please Enter Address</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Contact No.</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="user.contactNo" name="contactNo" ng-required="true" class="form-control"/>
+            <p ng-show="userForm.contactNo.$error.required && (userForm.$submitted || userForm.contactNo.$dirty)" class="text-danger">Please Enter Contact No.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="user._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="user._id!=null"/>
+            <a ui-sref="users" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

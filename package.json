@@ -1,0 +1,22 @@
+{
+  "name": "pharmacyApp",
+  "version": "1.0.0",
+  "description": "pharmacy app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashen, Lahiru, Vimukthi, Rukmali",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.0",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.7",
+    "nodemailer": "^4.0.1",
+    "sendgrid": "^5.1.2"
+  }
+}

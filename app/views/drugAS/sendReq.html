@@ -1,0 +1,64 @@
+<div class="x_panel">
+<h2 ng-show="request._id!=null">Edit</h2>
+<h2 ng-hide="request._id!=null">Create</h2>
+<hr>
+<form name="requestForm" ng-submit="saveData(request)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Drug ID</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.reqid" name="reqid" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Drug Name</label>
+        <div class="col-md-5">
+            <input type="text" name="drugName" ng-model="request.drugName" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Requested Quantity</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.reqQ" name="reqQ" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Available Quantity</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.availableQ" name="availableQ" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Date</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.datef" name="datef" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Department</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.dep" name="dep" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2">Approved Quantity</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="request.approveQ" name="approveQ" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="request._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="request._id!=null"/>
+            <a ui-sref="requests" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>
+</div>

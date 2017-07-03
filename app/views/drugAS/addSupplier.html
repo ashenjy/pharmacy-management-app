@@ -1,0 +1,49 @@
+<div class="x_panel">
+<h2 ng-show="supplier._id!=null">Edit Supplier Details</h2>
+<h2 ng-hide="supplier._id!=null">Add Supplier Details</h2>
+<hr>
+<form name="supplierForm" ng-submit="saveData(supplier)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Business Name</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="supplier.businessName" name="businessName" ng-required="true" class="form-control"/>
+            <p ng-show="supplierForm.businessName.$error.required && (supplierForm.$submitted || supplierForm.businessName.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Address</label>
+        <div class="col-md-5">
+            <textarea name="address" ng-model="supplier.address" ng-required="true" class="form-control"></textarea>
+            <p ng-show="supplierForm.address.$error.required && (supplierForm.$submitted || supplierForm.address.$dirty)" class="text-danger">Please Enter Unit Type</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Contact Number</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="supplier.contactNo" name="contactNo" ng-required="true" class="form-control"/>
+            <p ng-show="supplierForm.contactNo.$error.required && (supplierForm.$submitted || supplierForm.contactNo.$dirty)" class="text-danger">Please Enter supplier Category</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Email</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="supplier.email" name="email"  class="form-control"/>
+            <p ng-show="supplierForm.email.$error.required && (supplierForm.$submitted || supplierForm.email.$dirty)" class="text-danger">Please Enter supplier Quantity</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Website</label>
+        <div class="col-md-5">
+            <input type="text" ng-model="supplier.website" name="website" ng-required="true" class="form-control"/>
+            <p ng-show="supplierForm.website.$error.required && (supplierForm.$submitted || supplierForm.website.$dirty)" class="text-danger">Please Enter supplier Quantity</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="supplier._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="supplier._id!=null"/>
+            <a ui-sref="suppliers" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,48 @@
+<hr>
+
+<h2>Place Order</h2>
+<hr>
+<form name="emailForm" ng-submit="saveData(email)" novalidate class="form-horizontal">
+
+    <div class="form-group">
+        <label class="col-md-1">From :</label>
+        <div class="col-md-10">
+            <input type="text"   ng-model="email.emailFrom='ewisms_111@gmail.com'" name="emailFrom" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">To :</label>
+        <div class="col-md-10">
+            <input type="text"   ng-model="email.emailTo='ashen1991@gmail.com'"   name="emailTo" ng-required="true" class="form-control"/>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">Subject :</label>
+        <div class="col-md-10">
+            <input type="text"  ng-model="email.emailSubject='Drug Reorder Request '"  name="emailSubject" ng-required="true" class="form-control">
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-1">Content</label>
+        <div class="col-md-10">
+            <textarea name="emailContent" ng-model="email.emailContent" ng-required="true" class="form-control" rows="15" cols="70">
+
+            </textarea>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Send" class="btn btn-primary" />
+
+            <a ui-sref="drugs" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>

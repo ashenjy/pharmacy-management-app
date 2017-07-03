@@ -1,0 +1,43 @@
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+
+        <div class="x_content">
+            <table class="table table-hover" ng-if="prescriptions.length>0">
+                <thead>
+                <caption><h2>Prescriptions Listing</h2></caption>
+                <tr>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Patient Age</th>
+                    <th>Date</th>
+                    <th>Drugs</th>
+                    <th>Actions</th>
+                </tr>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="prescription in prescriptions">
+                    <td> {{ prescription.patientName }}</td>
+                    <td> {{ prescription.patientAge }} </td>
+                    <td>{{ prescription.date | date:'MM/dd/yyyy' }}</td>
+                    <td>{{ prescription.drugs }}</td>
+                    <td>
+                        <a ui-sref="editPrescription({id:prescription._id})">Edit</a> |
+                        <a href="#" ng-click="deletePrescription(prescription._id)">Delete</a>
+                        <a href="#" class="btn btn-success btn-sm" role="button">Dispense Drugs</a>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <a ui-sref="createPrescription" class="btn btn-primary" role="button">Create New Prescription</a>
+            </div>
+
+            <div ng-if="prescriptions.length==0">
+                No record found !!
+            </div>
+        </div>
+    </div>
+</div>
