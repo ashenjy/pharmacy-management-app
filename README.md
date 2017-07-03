@@ -1,5 +1,5 @@
-# Pharmacy
-To run this Pharmacy application
+# Pharmacy Management System
+for a hospital
 
 Prerequisites
 ----------------
